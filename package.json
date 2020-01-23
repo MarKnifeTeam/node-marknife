@@ -22,5 +22,8 @@
     {
         "url": "https://github.com/MarKnifeTeam/node-marknife/issues"
     },
-    "homepage": "https://github.com/MarKnifeTeam/node-marknife#readme"
+    "homepage": "https://github.com/MarKnifeTeam/node-marknife#readme",
+    "dependencies":
+    {
+    }
 }
