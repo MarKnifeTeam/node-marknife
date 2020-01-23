@@ -4,7 +4,7 @@
   "description": "Node JS Marknife API Wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "node marknife.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,10 @@
     "Node",
     "JS"
   ],
+  "devDependencies":
+  {
+      "jest": "^22.2.1"
+  },
   "author": "“MarKnife\nnpm set init.author.email “labs@marknife.com",
   "license": "MIT",
   "bugs": {
