@@ -2,8 +2,6 @@ const marknife = require('./marknife.js');
 
 if(marknife.SayHello() == 'Hello world!')
 {
-    console.log("HELO");
-    return false;
+    throw new Error('SayHello');
 }
-
 return true;
