@@ -4,7 +4,7 @@
   "description": "Node JS Marknife API Wrapper",
   "main": "index.js",
   "scripts": {
-    "test": "marknife.test.js"
+    "test": "node marknife.test.js"
   },
   "repository": {
     "type": "git",
