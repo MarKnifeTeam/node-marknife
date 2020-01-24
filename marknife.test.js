@@ -1,6 +1,6 @@
 const Marknife  = require('./marknife');
 
-var token   = 'aa';
+var token   = '';
 var m       = new Marknife(token);
 
 var p = [];
@@ -20,6 +20,51 @@ var p = [];
             {
                 reject(new Error('Help'));
             }
+            return resolve();
+        });
+    }));
+    //Me
+    p.push(new Promise(function(resolve, reject)
+    {
+        m.Me(null, function(err, data, params)
+        {
+            if(err) reject(new Error('Me'));
+            return resolve();
+        });
+    }));
+    //Contacts
+    p.push(new Promise(function(resolve, reject)
+    {
+        m.Contacts(null, function(err, data, params)
+        {
+            if(err) reject(new Error('Contacts'));
+            return resolve();
+        });
+    }));
+    //Messages
+    p.push(new Promise(function(resolve, reject)
+    {
+        m.Messages(null, function(err, data, params)
+        {
+            if(err) reject(new Error('Messages'));
+            return resolve();
+        });
+    }));
+    //Forms
+    p.push(new Promise(function(resolve, reject)
+    {
+        m.Forms(null, function(err, data, params)
+        {
+            if(err) reject(new Error('Forms'));
+            return resolve();
+        });
+    }));
+    //Books
+    p.push(new Promise(function(resolve, reject)
+    {
+        m.Books(null, function(err, data, params)
+        {
+            if(err) reject(new Error('Books'));
             return resolve();
         });
     }));
