@@ -13,7 +13,7 @@ class Marknife
     {
         return ('Hello world!');
     }
-    Help(options, callback)
+    Help(callback, options)
     {
         this.Read('/help', function(err, data, params)
         {
@@ -21,7 +21,7 @@ class Marknife
 
         }, options);
     }
-    Me(options, callback)
+    Me(callback, options)
     {
         this.Read('/me', function(err, data, params)
         {
@@ -30,7 +30,7 @@ class Marknife
         }, options);
     }
 
-    Contacts(options, callback)
+    Contacts(callback, options)
     {
         this.Read('/contacts', function(err, data, params)
         {
@@ -38,14 +38,14 @@ class Marknife
 
         }, options);
     }
-    Messages(options, callback)
+    Messages(callback, options)
     {
         this.Read('/messages', function(err, data, params)
         {
             callback(err, data, params);
         }, options);
     }
-    Forms(options, callback)
+    Forms(callback, options)
     {
         this.Read('/forms', function(err, data, params)
         {
@@ -53,7 +53,7 @@ class Marknife
 
         }, options);
     }
-    Books(options, callback)
+    Books(callback, options)
     {
         this.Read('/books', function(err, data, params)
         {
@@ -61,6 +61,8 @@ class Marknife
 
         }, options);
     }
+
+
 
     Read(path, callback, params)
     {
