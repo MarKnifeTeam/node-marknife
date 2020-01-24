@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const Marknife  = require('./marknife');
 
-var token   = '';
+var token   = process.env.TOKEN;
 var m       = new Marknife(token);
 
 var p = [];
@@ -10,7 +12,6 @@ var p = [];
         if(m.SayHello() == 'Hello world!') return resolve();
         reject(new Error('SayHello'));
     }));
-
     //HELP
     p.push(new Promise(function(resolve, reject)
     {

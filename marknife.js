@@ -43,7 +43,6 @@ class Marknife
         this.Read('/messages', function(err, data, params)
         {
             callback(err, data, params);
-
         }, options);
     }
     Forms(options, callback)

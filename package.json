@@ -3,27 +3,27 @@
     "version": "1.0.0",
     "description": "Node JS Marknife API Wrapper",
     "main": "index.js",
-    "scripts":
-    {
+    "scripts": {
         "test": "node marknife.test.js"
     },
-    "repository":
-    {
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/MarKnifeTeam/node-marknife.git"
     },
-    "keywords":
-    [
-        "Marknife", "API", "Wrapper", "Node", "JS"
+    "keywords": [
+        "Marknife",
+        "API",
+        "Wrapper",
+        "Node",
+        "JS"
     ],
     "author": "“MarKnife\nnpm set init.author.email “labs@marknife.com",
     "license": "MIT",
-    "bugs":
-    {
+    "bugs": {
         "url": "https://github.com/MarKnifeTeam/node-marknife/issues"
     },
     "homepage": "https://github.com/MarKnifeTeam/node-marknife#readme",
-    "dependencies":
-    {
+    "dependencies": {
+        "dotenv": "^8.2.0"
     }
 }
