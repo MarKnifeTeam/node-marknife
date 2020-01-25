@@ -2,9 +2,11 @@ const http = require('https');
 
 class Marknife
 {
-    constructor(token)
+    constructor(user, key)
     {
-        this.token      = token;
+        this.token      = user;
+        this.user       = user;
+        this.key        = key;
         this.method     = 'GET';
         this.version    = 1;
         this.authtype   ='Bearer';
@@ -37,6 +39,18 @@ class Marknife
     {
         this.Read('/books', callback, options)
     }
+    Qrs(callback, options)
+    {
+        this.Read('/qrs', callback, options)
+    }
+    Events(callback, options)
+    {
+        this.Read('/events', callback, options)
+    }
+    Resources(callback, options)
+    {
+        this.Read('/resources', callback, options)
+    }
 
     Read(path, callback, params)
     {
@@ -60,7 +74,7 @@ class Marknife
     }
     Patch(path, callback, params)
     {
-        this.method = 'patch';
+        this.method = 'PATCH';
         this.Call(path, callback, params);
     }
     Purge(path, callback, params)

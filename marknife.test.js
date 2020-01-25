@@ -2,8 +2,7 @@ require('dotenv').config();
 
 const Marknife  = require('./marknife');
 
-var token   = process.env.TOKEN;
-var m       = new Marknife(token);
+var m       = new Marknife(process.env.APIUSER, process.env.APIKEY);
 
 var p = [];
 
