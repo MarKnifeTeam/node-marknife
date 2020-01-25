@@ -15,54 +15,28 @@ class Marknife
     }
     Help(callback, options)
     {
-        this.Read('/help', function(err, data, params)
-        {
-            callback(err, data, params);
-
-        }, options);
+        this.Read('/help', callback, options)
     }
     Me(callback, options)
     {
-        this.Read('/me', function(err, data, params)
-        {
-            callback(err, data, params);
-
-        }, options);
+        this.Read('/me', callback, options)
     }
-
     Contacts(callback, options)
     {
-        this.Read('/contacts', function(err, data, params)
-        {
-            callback(err, data, params);
-
-        }, options);
+        this.Read('/contacts', callback, options)
     }
     Messages(callback, options)
     {
-        this.Read('/messages', function(err, data, params)
-        {
-            callback(err, data, params);
-        }, options);
+        this.Read('/messages', callback, options)
     }
     Forms(callback, options)
     {
-        this.Read('/forms', function(err, data, params)
-        {
-            callback(err, data, params);
-
-        }, options);
+        this.Read('/forms', callback, options)
     }
     Books(callback, options)
     {
-        this.Read('/books', function(err, data, params)
-        {
-            callback(err, data, params);
-
-        }, options);
+        this.Read('/books', callback, options)
     }
-
-
 
     Read(path, callback, params)
     {
@@ -99,10 +73,17 @@ class Marknife
     	var req = null;
 
         if(typeof this.token == 'undefined' ||  this.token == '')
-            return callback(new Error('Marknife Invalid Token'));
-
+        {
+            if (callback && typeof callback === 'function')
+                return callback(new Error('Marknife Invalid Token'));
+            return [new Error('Marknife Invalid Token')];
+        }
         if(typeof path == 'undefined' ||  path == '')
-            return callback(new Error('Invalid Path'));
+        {
+            if (callback && typeof callback === 'function')
+                return callback(new Error('Invalid Path'));
+            return [new Error('Invalid Path')];
+        }
 
         var bearer = this.authtype + ' ' + this.token;
 
@@ -136,11 +117,10 @@ class Marknife
                 });
                 res.on("end", data =>
                 {
+                    buffer = JSON.parse(buffer);
                     if (callback && typeof callback === 'function')
-                    {
-                        buffer = JSON.parse(buffer);
-                        callback(null, buffer, params);
-                    }
+                        return callback(null, buffer, params);
+                    return [null, buffer, params];
                 });
             });
 
